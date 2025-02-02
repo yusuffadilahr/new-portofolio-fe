@@ -1,6 +1,9 @@
 'use client'
 import { Box, Card, CardContent, CardMedia, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useAppSelector } from "../redux";
+import dynamic from "next/dynamic";
+
+const GithubCalendarComponent = dynamic(() => import('./githubcalendar'))
 
 export default function BodyPortofolio() {
     const modeTheme = useAppSelector((state) => state.global.themeMode.mode)
@@ -39,6 +42,9 @@ export default function BodyPortofolio() {
             </Box>
             <Box sx={{ width: '100%' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat laborum excepturi, deleniti at illum sunt accusamus rerum facere. Reprehenderit voluptates placeat saepe illum perferendis impedit veritatis ducimus pariatur nisi.
+            </Box>
+            <Box>
+                <GithubCalendarComponent />
             </Box>
         </Box>
     );

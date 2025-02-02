@@ -64,7 +64,6 @@ export default function HideAppBar(props: Props) {
             <CssBaseline />
             <HideOnScroll {...props}>
                 <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
-                    {/* <div className='border'></div> */}
                     <Toolbar sx={{
                         display: 'flex',
                         backgroundColor: modeTheme === 'dark' ? 'black' : 'white',
