@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const themeMode: { mode: string } = {
-    mode: 'dark',
+    mode: 'light',
 }
 
 const globalReducer = createSlice({

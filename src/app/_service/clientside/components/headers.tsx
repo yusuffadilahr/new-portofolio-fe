@@ -20,15 +20,23 @@ import { useRouter } from 'next/navigation';
 import { useTheme } from '@mui/material/styles';
 import { useAppDispatch, useAppSelector } from '../redux';
 import { setThemeGlobal } from '../redux/globalstore/reducer';
+import Image from 'next/image';
 
 function HideOnScroll(props: Props) {
     const { children, window } = props;
     const trigger = useScrollTrigger({
-        target: window ? window() : undefined,
+        target: typeof window !== 'undefined' ? window() : undefined,
     });
 
     return (
-        <Slide appear={false} direction="down" in={!trigger}>
+        <Slide appear={false} direction="down" in={!trigger} timeout={0}
+            style={{
+                backgroundColor: 'transparent',
+                paddingRight: '8px',
+                paddingLeft: '8px',
+                paddingTop: '8px'
+            }}
+        >
             {children ?? <div />}
         </Slide>
     );
@@ -56,22 +64,30 @@ export default function HideAppBar(props: Props) {
             <CssBaseline />
             <HideOnScroll {...props}>
                 <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
-                    <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Box sx={{
-                                width: { xs: '10px', sm: '15px' },
-                                height: { xs: '10px', sm: '15px' },
-                                backgroundColor: modeTheme === 'dark' ? 'red' : 'blue',
-                                borderRadius: '50%'
-                            }} />
+                    {/* <div className='border'></div> */}
+                    <Toolbar sx={{
+                        display: 'flex',
+                        backgroundColor: modeTheme === 'dark' ? 'black' : 'white',
+                        justifyContent: 'space-between',
+                        borderWidth: modeTheme === 'dark' ? '0px' : '1px',
+                        borderRadius: '25px'
+                    }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', width: '24px', height: '24px' }}>
+                            <Image src={'/images/logo-sementara.png'} width={500} height={500} alt='Profil-logo' />
                         </Box>
 
                         {isMobile && (
                             <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleOpenSideBarOpen}>
-                                <MenuIcon sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
+                                <MenuIcon sx={{
+                                    fontSize: {
+                                        xs: '1.5rem', sm: '2rem',
+                                        color: modeTheme === 'dark' ? 'white' : '#404040'
+                                    }
+                                }} />
                             </IconButton>
                         )}
                     </Toolbar>
+                    {/* <div className='text-white'></div> */}
                 </AppBar>
             </HideOnScroll>
             <Toolbar />
