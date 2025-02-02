@@ -10,7 +10,7 @@ export default function BodyPortofolio() {
     const theme = useTheme();
     const isTabletMode = useMediaQuery(theme.breakpoints.up('sm'));
     return (
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', minHeight: '100vh', height: 'fit-content' }}>
+        <Box sx={{ width: '100%', display: isTabletMode ? 'none' : 'flex', flexDirection: 'column', minHeight: '100vh', height: 'fit-content' }}>
             <Box sx={{ width: 'fit-content', display: 'flex' }}>
                 <Typography sx={{ display: 'flex' }}>Welcome, </Typography>
                 <Typography sx={{
@@ -21,11 +21,8 @@ export default function BodyPortofolio() {
             <Box sx={{ paddingBottom: '10px', paddingTop: '10px' }}>
                 <Card sx={{
                     width: { xs: '100%', sm: '100%' }, borderRadius: '15px', overflow: 'hidden',
-                    display: isTabletMode ? 'none' : 'block'
+                    display: isTabletMode ? 'none' : 'block', boxShadow: 'none'
                 }}>
-                    {/* <div className="hidden">
-
-                </div> */}
                     <CardMedia component="img" height="200"
                         image="https://heroshotphotography.com/wp-content/uploads/2023/03/male-linkedin-corporate-headshot-on-white-square-1024x1024.jpg"
                         alt="Profile Picture" />
@@ -40,12 +37,23 @@ export default function BodyPortofolio() {
                     </CardContent>
                 </Card>
             </Box>
-            <Box sx={{ width: '100%' }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat laborum excepturi, deleniti at illum sunt accusamus rerum facere. Reprehenderit voluptates placeat saepe illum perferendis impedit veritatis ducimus pariatur nisi.
+            <Box sx={{ width: '100%', paddingTop: '5px' }}>
+                <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Introduction</Typography>
+                <Typography sx={{ fontSize: '13px', textAlign: 'justify' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat laborum excepturi, deleniti at illum sunt accusamus rerum facere. Reprehenderit voluptates placeat saepe illum perferendis impedit veritatis ducimus pariatur nisi.</Typography>
             </Box>
-            <Box>
-                <GithubCalendarComponent />
+            <Box sx={{ width: '100%', paddingTop: '15px' }}>
+                <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Education</Typography>
+                <Typography sx={{ fontSize: '13px', textAlign: 'justify' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat laborum excepturi, deleniti at illum sunt accusamus rerum facere. Reprehenderit voluptates placeat saepe illum perferendis impedit veritatis ducimus pariatur nisi.</Typography>
             </Box>
+            <Box sx={{ width: '100%', paddingTop: '15px' }}>
+                <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Work Experience</Typography>
+                <Typography sx={{ fontSize: '13px', textAlign: 'justify' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat laborum excepturi, deleniti at illum sunt accusamus rerum facere. Reprehenderit voluptates placeat saepe illum perferendis impedit veritatis ducimus pariatur nisi.</Typography>
+            </Box>
+            <Box sx={{ width: '100%', paddingTop: '15px' }}>
+                <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Portofolio</Typography>
+                <Typography sx={{ fontSize: '13px', textAlign: 'justify' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat laborum excepturi, deleniti at illum sunt accusamus rerum facere. Reprehenderit voluptates placeat saepe illum perferendis impedit veritatis ducimus pariatur nisi.</Typography>
+            </Box>
+            <GithubCalendarComponent />
         </Box>
     );
 }

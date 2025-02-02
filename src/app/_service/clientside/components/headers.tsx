@@ -14,6 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import HomeIcon from '@mui/icons-material/Home'
 import InfoIcon from '@mui/icons-material/Info'
 import WorkIcon from '@mui/icons-material/Work'
+import Resume from '@mui/icons-material/NoteAlt'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import { useRouter } from 'next/navigation';
@@ -57,6 +58,7 @@ export default function HideAppBar(props: Props) {
         { name: 'Beranda', link: '/', icon: <HomeIcon sx={{ fontSize: '1.2rem' }} /> },
         { name: 'Tentang Saya', link: '/about-us', icon: <InfoIcon sx={{ fontSize: '1.2rem' }} /> },
         { name: 'Kontak', link: '/contact', icon: <WorkIcon sx={{ fontSize: '1.2rem' }} /> },
+        { name: 'Resume', link: '/contact', icon: <Resume sx={{ fontSize: '1.2rem' }} /> },
     ];
 
     return (
@@ -86,7 +88,6 @@ export default function HideAppBar(props: Props) {
                             </IconButton>
                         )}
                     </Toolbar>
-                    {/* <div className='text-white'></div> */}
                 </AppBar>
             </HideOnScroll>
             <Toolbar />
@@ -98,14 +99,12 @@ export default function HideAppBar(props: Props) {
                 }}>
                     <Typography sx={{
                         fontSize: '1rem',
-                        // marginBottom: '20px',
                         fontWeight: 'bold'
                     }}>Menu</Typography>
                 </Box>
                 <Box sx={{
                     width: { xs: '250px', sm: '300px' },
                     color: 'black',
-                    // height: '100%',
                     padding: '10px',
                     display: 'flex',
                     flexDirection: 'column',
