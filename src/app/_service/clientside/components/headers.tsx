@@ -39,7 +39,6 @@ export default function HideAppBar(props: Props) {
     const handleOpenSideBarOpen = () => setIsOpenSideBar(true);
     const handleOpenSideBarClose = () => setIsOpenSideBar(false);
     const modeTheme = useAppSelector((state) => state.global.themeMode.mode)
-    console.log(modeTheme, '< apa isinya nih')
     const dispatch = useAppDispatch()
     const router = useRouter();
 
@@ -62,7 +61,7 @@ export default function HideAppBar(props: Props) {
                             <Box sx={{
                                 width: { xs: '10px', sm: '15px' },
                                 height: { xs: '10px', sm: '15px' },
-                                backgroundColor: 'red',
+                                backgroundColor: modeTheme === 'dark' ? 'red' : 'blue',
                                 borderRadius: '50%'
                             }} />
                         </Box>
@@ -79,19 +78,24 @@ export default function HideAppBar(props: Props) {
 
             <Drawer open={isOpenSideBar} anchor="right" onClose={handleOpenSideBarClose}>
                 <Box sx={{
+                    width: '100%',
+                    padding: '20px'
+                }}>
+                    <Typography sx={{
+                        fontSize: '1rem',
+                        // marginBottom: '20px',
+                        fontWeight: 'bold'
+                    }}>Menu</Typography>
+                </Box>
+                <Box sx={{
                     width: { xs: '250px', sm: '300px' },
                     color: 'black',
-                    height: '100%',
+                    // height: '100%',
                     padding: '10px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                 }}>
-                    <Typography sx={{
-                        fontSize: '1.5rem',
-                        marginBottom: '20px'
-                    }}>Menu</Typography>
-
                     {isArrMenu.map((text) => (
                         <ListItem key={text?.name} disablePadding>
                             <ListItemButton sx={{
@@ -121,11 +125,9 @@ export default function HideAppBar(props: Props) {
                                 },
                                 padding: '10px 20px',
                                 margin: '5px 0',
-                            }}
-                            onClick={() => {
+                            }} onClick={() => {
                                 dispatch(setThemeGlobal(modeTheme === 'dark' ? 'light' : 'dark'));
-                            }}
-                        >
+                            }}>
                             <ListItemIcon>
                                 {modeTheme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
                             </ListItemIcon>

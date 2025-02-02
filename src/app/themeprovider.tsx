@@ -11,7 +11,13 @@ export default function ThemeProviders({ children }: { children: React.ReactNode
     const theme = createTheme({
         palette: {
             mode: checkedMode === 'dark' ? 'dark' : 'light',
-        }
+            background: {
+                default: checkedMode === 'dark' ? '#121212' : '#fff'
+            },
+            text: {
+                primary: checkedMode === 'dark' ? '#fff' : '#000'
+            }
+        },
     })
     return (
         <ThemeProvider theme={theme}>
