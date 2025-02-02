@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HideAppBar from "./_service/clientside/components/headers";
+import RootProvider from "./rootprovider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,9 +38,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <RootProvider>
           <HideAppBar />
-          <section className="pt-5 px-2">{children}</section>
+          <section className="pt-5 px-2">
+            {children}
+          </section>
+        </RootProvider>
       </body>
-    </html>
+    </html >
   );
 }
