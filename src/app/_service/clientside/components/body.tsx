@@ -20,15 +20,15 @@ export default function BodyPortofolio() {
                 }}>Dude!</Typography>
             </Box> */}
             <Box className="w-full min-h-10 h-[300px] rounded-xl relative">
-                <Box className="absolute inset-0 flex justify-end p-4 items-center">
+                <Box className="absolute inset-0 flex justify-center p-4 items-center">
                     {/* <h1 className="font-bold">GAS</h1> */}
-                    <Box className='w-44 h-44 bg-gradient-to-tr from-white via-sky-400 to-blue-600 rounded-full z-0'></Box>
+                    <Box className='w-52 h-52 bg-gradient-to-tr from-white via-sky-400 to-blue-600 rounded-full z-0'></Box>
                 </Box>
                 {/* <Box className="absolute inset-0 flex justify-start p-4 top-10">
                     <Box className='w-20 h-20 bg-blue-600 rounded-full z-0'></Box>
                 </Box> */}
                 <Image height={500} width={500} src='/images/foto-intro.png'
-                    priority alt="Profile Picture" className="h-full w-fit z-40 absolute object-cover"/* className="w-[200px] h-[200px] object-cover object-[0_30%]"*/ />
+                    priority alt="Profile Picture" className="h-[300px] w-fit z-40 absolute object-cover"/* className="w-[200px] h-[200px] object-cover object-[0_30%]"*/ />
             </Box>
             <Box sx={{ width: '100%', paddingTop: '5px' }}>
                 <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Introduction</Typography>
