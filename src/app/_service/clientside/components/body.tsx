@@ -28,7 +28,7 @@ export default function BodyPortofolio() {
                     <Box className='w-20 h-20 bg-blue-600 rounded-full z-0'></Box>
                 </Box> */}
                 <Image height={500} width={500} src='/images/foto-intro.png'
-                    priority alt="Profile Picture" className="h-full w-fit z-40 absolute"/* className="w-[200px] h-[200px] object-cover object-[0_30%]"*/ />
+                    priority alt="Profile Picture" className="h-full w-fit z-40 absolute object-cover"/* className="w-[200px] h-[200px] object-cover object-[0_30%]"*/ />
             </Box>
             <Box sx={{ width: '100%', paddingTop: '5px' }}>
                 <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Introduction</Typography>
