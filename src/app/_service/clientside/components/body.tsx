@@ -1,5 +1,5 @@
 'use client'
-import { Box, Card, /*CardContent, CardMedia, */Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, /*Card, CardContent, CardMedia, */Typography, useMediaQuery, useTheme } from "@mui/material";
 // import { useAppSelector } from "../redux";
 import dynamic from "next/dynamic";
 import Image from "next/image";
