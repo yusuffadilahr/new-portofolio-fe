@@ -21,12 +21,12 @@ export default function BodyPortofolio() {
             </Box> */}
             <Box className="w-full min-h-[350px] h-fit rounded-xl relative">
                 <Box className="absolute inset-0 flex justify-center p-4 items-center">
-                    <Box className='w-52 h-52 bg-gradient-to-tr from-white via-sky-400 to-blue-600 rounded-full z-0'></Box>
+                    <Box className='w-60 h-60 pt-10 top-20 bg-gradient-to-tr from-white via-sky-400 to-blue-600 rounded-full z-0'></Box>
                 </Box>
                 {/* <Box className="absolute inset-0 flex justify-start p-4 top-10">
                     <Box className='w-20 h-20 bg-blue-600 rounded-full z-0'></Box>
                 </Box> */}
-                <Box className="w-full min-h-[350px] h-fit sm:h-[350px] rounded-xl relative">
+                <Box className="w-full min-h-screen h-fit sm:h-[350px] rounded-xl relative">
                     <Image height={500} width={500}
                         src='/images/foto-intro.png'
                         priority alt="Profile Picture"
