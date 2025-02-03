@@ -12,27 +12,12 @@ export default function BodyPortofolio() {
     const isTabletMode = useMediaQuery(theme.breakpoints.up('sm'));
     return (
         <Box sx={{ width: '100%', display: isTabletMode ? 'none' : 'flex', flexDirection: 'column', minHeight: '100vh', height: 'fit-content' }}>
-            {/* <Box sx={{ width: 'fit-content', display: 'flex' }}>
-                <Typography sx={{ display: 'flex' }}>Welcome, </Typography>
-                <Typography sx={{
-                    width: 'fit-content', display: 'flex', backgroundColor: modeTheme === 'dark' ? 'darkblue' : 'violet',
-                    height: 'fit-content', borderRadius: '25px', paddingRight: '10px', paddingLeft: '10px', marginLeft: '2px'
-                }}>Dude!</Typography>
-            </Box> */}
-            <Box className="w-full min-h-[350px] h-fit rounded-xl relative">
-                <Box className="absolute inset-0 flex justify-center p-4 items-center">
-                    <Box className='w-60 h-60 pt-10 top-20 bg-gradient-to-tr from-white via-sky-400 to-blue-600 rounded-full z-0'></Box>
-                </Box>
-                {/* <Box className="absolute inset-0 flex justify-start p-4 top-10">
-                    <Box className='w-20 h-20 bg-blue-600 rounded-full z-0'></Box>
-                </Box> */}
-                <Box className="w-full min-h-screen h-fit sm:h-[350px] rounded-xl relative">
-                    <Image height={500} width={500}
-                        src='/images/foto-intro.png'
-                        priority alt="Profile Picture"
-                        className="h-full w-full z-40 absolute object-cover object-top"
-                    />
-                </Box>
+            <Box className="w-full h-fit">
+                <Image height={500} width={500}
+                    src='/images/foto-intro.png'
+                    priority alt="Profile Picture"
+                    className="h-full w-full z-40 object-cover object-top"
+                />
             </Box>
             <Box sx={{ width: '100%', paddingTop: '5px' }}>
                 <Typography sx={{ width: '100%', height: 'fit-content', fontSize: '20px', fontWeight: 'bold' }}>Introduction</Typography>
