@@ -14,7 +14,10 @@ export default function GithubCalendarComponent() {
     }
 
     return (
-        <Box sx={{ width: '100%', height: 'fit-content', marginTop: '15px', marginBottom: '15px' }}>
+        <Box sx={{
+            width: '100%', height: 'fit-content', marginTop: '15px', marginBottom: '15px',
+            border: '1px', borderRadius: '25px'
+        }}>
             <GitHubCalendar username="yusuffadilahr" theme={colorTheme} />
         </Box>
     )

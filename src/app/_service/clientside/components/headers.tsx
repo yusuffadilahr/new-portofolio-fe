@@ -58,39 +58,43 @@ export default function HideAppBar(props: Props) {
         { name: 'Beranda', link: '/', icon: <HomeIcon sx={{ fontSize: '1.2rem' }} /> },
         { name: 'Tentang Saya', link: '/about-us', icon: <InfoIcon sx={{ fontSize: '1.2rem' }} /> },
         { name: 'Kontak', link: '/contact', icon: <WorkIcon sx={{ fontSize: '1.2rem' }} /> },
-        { name: 'Resume', link: '/contact', icon: <Resume sx={{ fontSize: '1.2rem' }} /> },
+        { name: 'Resume', link: '/resume', icon: <Resume sx={{ fontSize: '1.2rem' }} /> },
     ];
 
     return (
         <React.Fragment>
             <CssBaseline />
-            <HideOnScroll {...props}>
-                <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
-                    <Toolbar sx={{
-                        display: 'flex',
-                        backgroundColor: modeTheme === 'dark' ? 'black' : 'white',
-                        justifyContent: 'space-between',
-                        borderWidth: modeTheme === 'dark' ? '0px' : '1px',
-                        borderRadius: '25px'
-                    }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center', width: '24px', height: '24px' }}>
-                            <Image src={'/images/logo-sementara.png'} width={500} height={500} alt='Profil-logo' />
-                        </Box>
+            {isMobile ? (
+                <>
+                    <HideOnScroll {...props}>
+                        <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
+                            <Toolbar sx={{
+                                display: 'flex',
+                                backgroundColor: modeTheme === 'dark' ? 'black' : 'white',
+                                justifyContent: 'space-between',
+                                borderWidth: modeTheme === 'dark' ? '0px' : '1px',
+                                borderRadius: '25px'
+                            }}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', width: '30px', height: '30px' }}>
+                                    <Image src={'/images/logo-sementara.png'} width={500} height={500} alt='Profil-logo' />
+                                </Box>
 
-                        {isMobile && (
-                            <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleOpenSideBarOpen}>
-                                <MenuIcon sx={{
-                                    fontSize: {
-                                        xs: '1.5rem', sm: '2rem',
-                                        color: modeTheme === 'dark' ? 'white' : '#404040'
-                                    }
-                                }} />
-                            </IconButton>
-                        )}
-                    </Toolbar>
-                </AppBar>
-            </HideOnScroll>
-            <Toolbar />
+                                {isMobile && (
+                                    <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleOpenSideBarOpen}>
+                                        <MenuIcon sx={{
+                                            fontSize: {
+                                                xs: '1.5rem', sm: '2rem',
+                                                color: modeTheme === 'dark' ? 'white' : '#404040'
+                                            }
+                                        }} />
+                                    </IconButton>
+                                )}
+                            </Toolbar>
+                        </AppBar>
+                    </HideOnScroll>
+                    <Toolbar />
+                </>
+            ) : ''}
 
             <Drawer open={isOpenSideBar} anchor="right" onClose={handleOpenSideBarClose}>
                 <Box sx={{
