@@ -12,10 +12,10 @@ export default function ThemeProviders({ children }: { children: React.ReactNode
         palette: {
             mode: checkedMode === 'dark' ? 'dark' : 'light',
             background: {
-                default: checkedMode === 'dark' ? '#404040' : '#fff'
+                default: checkedMode === 'dark' ? '#020617' : '#fff'
             },
             text: {
-                primary: checkedMode === 'dark' ? 'white' : '#404040'
+                primary: checkedMode === 'dark' ? 'white' : '#020617'
             }
         },
     })

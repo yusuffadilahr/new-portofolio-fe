@@ -2,7 +2,7 @@
 import LogWelcome from "./logwelcome";
 import dynamic from 'next/dynamic'
 
-const BodyPortofolio = dynamic(() => import('./_service/clientside/components/body'))
+const BodyPortofolio = dynamic(() => import('./_service/clientside/components/bodylanding'))
 
 export default function Home() {
   return (

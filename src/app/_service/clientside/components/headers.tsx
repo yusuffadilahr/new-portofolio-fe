@@ -70,13 +70,13 @@ export default function HideAppBar(props: Props) {
                         <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
                             <Toolbar sx={{
                                 display: 'flex',
-                                backgroundColor: modeTheme === 'dark' ? 'black' : 'white',
+                                backgroundColor: modeTheme === 'dark' ? '#0f172a' : 'white',
                                 justifyContent: 'space-between',
                                 borderWidth: modeTheme === 'dark' ? '0px' : '1px',
                                 borderRadius: '25px'
                             }}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', width: '30px', height: '30px' }}>
-                                    <Image src={'/images/logo-sementara.png'} width={500} height={500} alt='Profil-logo' />
+                                <Box sx={{ display: 'flex', alignItems: 'center', width: '40px', height: '40px' }}>
+                                    <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[40px] h-[40px] rounded-full' width={500} height={500} alt='Profil-logo' />
                                 </Box>
 
                                 {isMobile && (
