@@ -9,7 +9,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Slide from '@mui/material/Slide';
 import { Props } from '../interfacepublic';
-import { Divider, Drawer, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, useMediaQuery } from '@mui/material';
+import { Divider, Drawer, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Modal, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'
 import HomeIcon from '@mui/icons-material/Home'
 import InfoIcon from '@mui/icons-material/Info'
@@ -45,8 +45,11 @@ function HideOnScroll(props: Props) {
 
 export default function HideAppBar(props: Props) {
     const [isOpenSideBar, setIsOpenSideBar] = React.useState<boolean>(false);
+    const [isOpenModal, setIsOpenModal] = React.useState<boolean>(false)
     const handleOpenSideBarOpen = () => setIsOpenSideBar(true);
     const handleOpenSideBarClose = () => setIsOpenSideBar(false);
+    const handleOpenModal = () => setIsOpenModal(true)
+    const handleCloseModal = () => setIsOpenModal(false)
     const modeTheme = useAppSelector((state) => state.global.themeMode.mode)
     const dispatch = useAppDispatch()
     const router = useRouter();
@@ -76,7 +79,9 @@ export default function HideAppBar(props: Props) {
                                 borderRadius: '25px'
                             }}>
                                 <Box sx={{ display: 'flex', alignItems: 'center', width: '40px', height: '40px' }}>
-                                    <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[40px] h-[40px] rounded-full' width={500} height={500} alt='Profil-logo' />
+                                    <button onClick={() => handleOpenModal()}>
+                                        <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[40px] h-[40px] rounded-full' width={500} height={500} alt='Profil-logo' />
+                                    </button>
                                 </Box>
 
                                 {isMobile && (
@@ -95,6 +100,22 @@ export default function HideAppBar(props: Props) {
                     <Toolbar />
                 </>
             ) : ''}
+
+            <Modal open={isOpenModal} onClose={handleCloseModal} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+                <Box sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 'fit-content',
+                    boxShadow: 24,
+                    p: 4,
+                }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', width: '200px', height: '200px' }}>
+                        <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[200px] h-[200px] rounded-full' width={500} height={500} alt='Profil-logo' />
+                    </Box>
+                </Box>
+            </Modal>
 
             <Drawer open={isOpenSideBar} anchor="right" onClose={handleOpenSideBarClose}>
                 <Box sx={{
