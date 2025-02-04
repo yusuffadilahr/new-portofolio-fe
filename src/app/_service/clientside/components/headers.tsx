@@ -78,10 +78,13 @@ export default function HideAppBar(props: Props) {
                                 borderWidth: modeTheme === 'dark' ? '0px' : '1px',
                                 borderRadius: '25px'
                             }}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', width: '40px', height: '40px' }}>
-                                    <button onClick={() => handleOpenModal()}>
-                                        <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[40px] h-[40px] rounded-full' width={500} height={500} alt='Profil-logo' />
-                                    </button>
+                                <Box className='w-full flex gap-2 items-center'>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', width: '40px', height: '40px' }}>
+                                        <button onClick={() => handleOpenModal()}>
+                                            <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[40px] h-[40px] rounded-full' width={500} height={500} alt='Profil-logo' />
+                                        </button>
+                                    </Box>
+                                    <h1>Hello, I am Yusuf!</h1>
                                 </Box>
 
                                 {isMobile && (

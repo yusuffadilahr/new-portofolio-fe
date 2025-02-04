@@ -10,10 +10,6 @@ export default function TechStackComponent() {
         <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-white' : 'bg-white border text-black'} 
         rounded-2xl p-3 sm:p-4 md:p-5 min-h-[2.5rem] h-fit flex justify-center items-center font-bold`}>
             <Box className="grid grid-cols-4 w-full gap-4 text-center">
-                {/* <Box>
-                    <ReactIcon sx={{ fontSize: 40, color: '#61dafb' }} />
-                    <Typography variant="body2">React</Typography>
-                </Box> */}
                 <Box>
                     <GitHub sx={{ fontSize: 40, color: '#333' }} />
                 </Box>
