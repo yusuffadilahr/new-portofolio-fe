@@ -53,6 +53,7 @@ interface VariableProximityProps {
     className?: string;
     onClick?: () => void;
     style?: CSSProperties;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 }
 
@@ -159,33 +160,38 @@ const VariableProximity = forwardRef<HTMLSpanElement, VariableProximityProps>((p
             className={className}
             {...restProps}
         >
-            {words.map((word, wordIndex) => (
-                <span
-                    key={wordIndex}
-                    className="inline-block whitespace-nowrap"
-                >
-                    {word.split("").map((letter) => {
-                        const currentLetterIndex = letterIndex++;
-                        return (
-                            <motion.span
-                                key={currentLetterIndex}
-                                ref={(el) => { letterRefs.current[currentLetterIndex] = el; }}
-                                style={{
-                                    display: "inline-block",
-                                    fontVariationSettings:
-                                        interpolatedSettingsRef.current[currentLetterIndex],
-                                }}
-                                aria-hidden="true"
-                            >
-                                {letter}
-                            </motion.span>
-                        );
-                    })}
-                    {wordIndex < words.length - 1 && (
-                        <span className="inline-block">&nbsp;</span>
-                    )}
-                </span>
-            ))}
+
+            {words.map(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (word: any, wordIndex: number) => (
+                    <span
+                        key={wordIndex}
+                        className="inline-block whitespace-nowrap"
+                    >
+                        {word.split("").map(
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            (letter: any) => {
+                                const currentLetterIndex = letterIndex++;
+                                return (
+                                    <motion.span
+                                        key={currentLetterIndex}
+                                        ref={(el) => { letterRefs.current[currentLetterIndex] = el; }}
+                                        style={{
+                                            display: "inline-block",
+                                            fontVariationSettings:
+                                                interpolatedSettingsRef.current[currentLetterIndex],
+                                        }}
+                                        aria-hidden="true"
+                                    >
+                                        {letter}
+                                    </motion.span>
+                                );
+                            })}
+                        {wordIndex < words.length - 1 && (
+                            <span className="inline-block">&nbsp;</span>
+                        )}
+                    </span>
+                ))}
             <span className="sr-only">{label}</span>
         </span>
     );

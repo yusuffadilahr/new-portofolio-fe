@@ -26,8 +26,11 @@ export interface RotatingTextProps
   > {
   texts: string[];
   transition?: Transition;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   initial?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   animate?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   exit?: any;
   animatePresenceMode?: "sync" | "wait";
   animatePresenceInitial?: boolean;
