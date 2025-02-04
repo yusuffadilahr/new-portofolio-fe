@@ -1,32 +1,53 @@
 'use client'
 
 import { Box } from "@mui/material";
-import { GitHub, Code, Storage, Language, Web, JavascriptOutlined } from "@mui/icons-material";
 import { useAppSelector } from "../redux";
+import TypeScriptIcons from "./icons/typescript";
+import JavaScriptIcons from "./icons/javascript";
+import NodejsIcons from "./icons/nodejs";
+import ReactIcons from "./icons/react";
+import NextJsIcons from "./icons/nextjs";
+import ExpressJsIcons from "./icons/expressjs";
+import PrismaIcons from "./icons/prisma";
+import MySqlIcons from "./icons/mysql";
+import SupabaseIcons from "./icons/supabase";
+import ReduxIcons from "./icons/redux";
 
 export default function TechStackComponent() {
     const themeMode = useAppSelector((state) => state.global.themeMode.mode)
     return (
         <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-white' : 'bg-white border text-black'} 
         rounded-2xl p-3 sm:p-4 md:p-5 min-h-[2.5rem] h-fit flex justify-center items-center font-bold`}>
-            <Box className="grid grid-cols-4 w-full gap-4 text-center">
+            <Box className="grid grid-cols-5 w-full gap-4 text-center">
                 <Box>
-                    <GitHub sx={{ fontSize: 40, color: '#333' }} />
+                    <TypeScriptIcons className={'text-sm'} />
                 </Box>
                 <Box>
-                    <Code sx={{ fontSize: 40, color: '#61dafb' }} />
+                    <JavaScriptIcons />
                 </Box>
                 <Box>
-                    <Storage sx={{ fontSize: 40, color: '#4caf50' }} />
+                    <NodejsIcons />
                 </Box>
                 <Box>
-                    <Language sx={{ fontSize: 40, color: '#ff5722' }} />
+                    <ReactIcons className={'text-xs'} />
                 </Box>
                 <Box>
-                    <Web sx={{ fontSize: 40, color: '#1976d2' }} />
+                    <NextJsIcons />
                 </Box>
                 <Box>
-                    <JavascriptOutlined sx={{ fontSize: 40, color: '#1976d2' }} />
+                    <ExpressJsIcons />
+                </Box>
+                <Box>
+                    <PrismaIcons />
+                </Box>
+                <Box>
+                    <MySqlIcons />
+                </Box>
+                <Box>
+                    <SupabaseIcons />
+                </Box>
+                <Box>
+                    <ReduxIcons />
                 </Box>
             </Box>
         </Box>
