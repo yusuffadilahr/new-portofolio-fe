@@ -99,7 +99,8 @@ export default function HideAppBar(props: Props) {
             <Drawer open={isOpenSideBar} anchor="right" onClose={handleOpenSideBarClose}>
                 <Box sx={{
                     width: '100%',
-                    padding: '20px'
+                    padding: '20px',
+                    backgroundColor: modeTheme === 'dark' ? '#020617' : 'white'
                 }}>
                     <Typography sx={{
                         fontSize: '1rem',
@@ -113,6 +114,8 @@ export default function HideAppBar(props: Props) {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    backgroundColor: modeTheme === 'dark' ? '#020617' : 'white',
+                    height: '100%'
                 }}>
                     {isArrMenu.map((text) => (
                         <ListItem key={text?.name} disablePadding>
@@ -122,6 +125,7 @@ export default function HideAppBar(props: Props) {
                                 },
                                 padding: '10px 20px',
                                 margin: '5px 0',
+                                color: modeTheme === 'dark' ? 'white' : 'black',
                             }} onClick={() => {
                                 router.push(text?.link);
                                 setTimeout(() => {
@@ -143,6 +147,7 @@ export default function HideAppBar(props: Props) {
                                 },
                                 padding: '10px 20px',
                                 margin: '5px 0',
+                                color: modeTheme === 'dark' ? 'white' : 'black',
                             }} onClick={() => {
                                 dispatch(setThemeGlobal(modeTheme === 'dark' ? 'light' : 'dark'));
                             }}>
