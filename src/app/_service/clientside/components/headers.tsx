@@ -108,7 +108,6 @@ export default function HideAppBar(props: Props) {
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: 'fit-content',
-                    boxShadow: 24,
                     p: 4,
                 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', width: '200px', height: '200px' }}>
