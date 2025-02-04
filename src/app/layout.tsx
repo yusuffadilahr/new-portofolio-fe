@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://yourwebsite.com/thumbnail.jpg", // sementara
+        url: "https://yusuffadilahr-portofolio.vercel.app/",
         width: 1200,
         height: 630,
         alt: "Portfolio Preview",
