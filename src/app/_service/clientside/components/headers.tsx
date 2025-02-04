@@ -109,6 +109,7 @@ export default function HideAppBar(props: Props) {
                     transform: 'translate(-50%, -50%)',
                     width: 'fit-content',
                     p: 4,
+                    outline: 'none'
                 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', width: '200px', height: '200px' }}>
                         <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[200px] h-[200px] rounded-full' width={500} height={500} alt='Profil-logo' />
