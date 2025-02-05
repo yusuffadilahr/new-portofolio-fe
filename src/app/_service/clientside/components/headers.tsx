@@ -17,7 +17,7 @@ import WorkIcon from '@mui/icons-material/Work'
 import Resume from '@mui/icons-material/NoteAlt'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useTheme } from '@mui/material/styles';
 import { useAppDispatch, useAppSelector } from '../redux';
 import { setThemeGlobal } from '../redux/globalstore/reducer';
@@ -46,13 +46,16 @@ function HideOnScroll(props: Props) {
 export default function HideAppBar(props: Props) {
     const [isOpenSideBar, setIsOpenSideBar] = React.useState<boolean>(false);
     const [isOpenModal, setIsOpenModal] = React.useState<boolean>(false)
+
     const handleOpenSideBarOpen = () => setIsOpenSideBar(true);
     const handleOpenSideBarClose = () => setIsOpenSideBar(false);
     const handleOpenModal = () => setIsOpenModal(true)
     const handleCloseModal = () => setIsOpenModal(false)
+
     const modeTheme = useAppSelector((state) => state.global.themeMode.mode)
     const dispatch = useAppDispatch()
-    const router = useRouter();
+    const router = useRouter(); 
+    const pathname = usePathname()
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -67,7 +70,7 @@ export default function HideAppBar(props: Props) {
     return (
         <React.Fragment>
             <CssBaseline />
-            {isMobile ? (
+            {isMobile || pathname !== '/resume' ? (
                 <>
                     <HideOnScroll {...props}>
                         <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
