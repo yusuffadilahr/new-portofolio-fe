@@ -10,7 +10,7 @@ import * as React from 'react';
 export default function PdfViewer() {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
     const zoomPluginInstance = zoomPlugin()
-    const { zoomTo } = zoomPluginInstance
+    const { zoomTo } = zoomPluginInstance 
 
     const [zoomLevel, setZoomLevel] = React.useState(1.0)
     const handleZoomIn = () => {
