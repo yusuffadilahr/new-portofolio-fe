@@ -57,6 +57,8 @@ export default function HideAppBar(props: Props) {
     const router = useRouter(); 
     const pathname = usePathname()
 
+    console.log(pathname, '< ini apaan')
+
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -70,7 +72,7 @@ export default function HideAppBar(props: Props) {
     return (
         <React.Fragment>
             <CssBaseline />
-            {isMobile || pathname !== '/resume' ? (
+            {isMobile && pathname !== '/resume' ? (
                 <>
                     <HideOnScroll {...props}>
                         <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
