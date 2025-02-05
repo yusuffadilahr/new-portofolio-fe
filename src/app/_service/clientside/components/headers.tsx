@@ -57,8 +57,6 @@ export default function HideAppBar(props: Props) {
     const router = useRouter(); 
     const pathname = usePathname()
 
-    console.log(pathname, '< ini apaan')
-
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
