@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import HideAppBar from "./_service/clientside/components/headers";
 import RootProvider from "./rootprovider";
+import HideNavbarLayout from "./hideNavbarLayout";
 
 const dmSans = DM_Sans({
   variable: '--font-dm-sans',
@@ -36,9 +37,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${dmSans.className} antialiased`}>
         <RootProvider>
           <HideAppBar />
-          <section className="pt-5 px-2">
+          <HideNavbarLayout>
             {children}
-          </section>
+          </HideNavbarLayout>
         </RootProvider>
       </body>
     </html >
