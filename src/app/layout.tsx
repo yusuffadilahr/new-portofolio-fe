@@ -4,6 +4,7 @@ import "./globals.css";
 import HideAppBar from "./_service/clientside/components/headers";
 import RootProvider from "./rootprovider";
 import HideNavbarLayout from "./hideNavbarLayout";
+import Footer from "./_service/clientside/components/footer";
 
 const dmSans = DM_Sans({
   variable: '--font-dm-sans',
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <HideNavbarLayout>
             {children}
           </HideNavbarLayout>
+          <Footer />
         </RootProvider>
       </body>
     </html >

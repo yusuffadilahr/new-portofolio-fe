@@ -42,8 +42,9 @@ export default function ProjectSession() {
                     <Card sx={{
                         maxWidth: '100vw',
                         width: '100%',
-                        borderRadius: '15px'
-                    }} className={`${theme === 'dark' ? 'bg-slate-950' : 'bg-gray-100'}`}>
+                        borderRadius: '15px',
+                        backgroundColor: theme === 'dark' ? '#0f172a' : '#fff'
+                    }}>
                         <CardActionArea>
                             <Image
                                 height={500}

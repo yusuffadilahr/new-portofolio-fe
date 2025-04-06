@@ -6,10 +6,18 @@ import dynamic from "next/dynamic";
 import * as React from 'react'
 import LoadingComponent from "./loading";
 
-const GithubCalendarComponent = dynamic(() => import('./githubcalendar'))
-const DynamicIntroduction = dynamic(() => import('./introduction'))
-const DynamicTechStack = dynamic(() => import('./techstack'))
-const DynamicProject = dynamic(() => import('./projectsession'))
+const GithubCalendarComponent = dynamic(() => import('./githubcalendar'), {
+    loading: () => <></>
+})
+const DynamicIntroduction = dynamic(() => import('./introduction'), {
+    loading: () => <></>
+})
+const DynamicTechStack = dynamic(() => import('./techstack'), {
+    loading: () => <></>
+})
+const DynamicProject = dynamic(() => import('./projectsession'), {
+    loading: () => <></>
+})
 
 export default function BodyLanding() {
     const [clientRendered, setClientRendered] = React.useState(false);
