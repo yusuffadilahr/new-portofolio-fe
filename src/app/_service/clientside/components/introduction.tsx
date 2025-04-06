@@ -34,7 +34,7 @@ export default function Introduction() {
                         transition={{ type: "spring", damping: 30, stiffness: 400 }} rotationInterval={2000} />
                 </Box> */}
                 <Typography variant='caption'
-                    fontSize={'12px'} fontWeight={400}
+                    fontSize={'14px'} fontWeight={400}
                     sx={{
                         color: themeMode === 'dark' ? '#fff' : '#404040'
                     }}
