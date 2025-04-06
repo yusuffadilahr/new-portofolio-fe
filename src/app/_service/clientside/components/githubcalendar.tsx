@@ -9,7 +9,7 @@ export default function GithubCalendarComponent() {
 
     return (
         <Box className={`w-full h-fit min-h-10 flex py-5 p-2 rounded-2xl
-            ${theme === 'dark' ? 'bg-slate-900 text-white' : 'bg-white border border-gray-200'}
+            ${theme === 'dark' ? 'bg-slate-900 text-[#fff]' : 'bg-[#fff] border border-gray-200'}
         `}>
             <GitHubCalendar username="yusuffadilahr" colorScheme={`${theme === 'dark' ? 'dark' : 'light'}`} />
         </Box>

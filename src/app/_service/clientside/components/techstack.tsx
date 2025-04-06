@@ -16,7 +16,7 @@ import ReduxIcons from "./icons/redux";
 export default function TechStackComponent() {
     const themeMode = useAppSelector((state) => state.global.themeMode.mode)
     return (
-        <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-white' : 'bg-white border text-black'} 
+        <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-[#fff]' : 'bg-[#fff] border text-black'} 
         rounded-2xl p-3 sm:p-4 md:p-5 min-h-[2.5rem] h-fit flex justify-center items-center font-bold`}>
             <Box className="grid grid-cols-5 w-full gap-4 text-center">
                 <Box>

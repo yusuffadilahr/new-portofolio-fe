@@ -76,7 +76,7 @@ export default function HideAppBar(props: Props) {
                         <AppBar elevation={0} sx={{ boxShadow: 'none' }}>
                             <Toolbar sx={{
                                 display: 'flex',
-                                backgroundColor: modeTheme === 'dark' ? '#0f172a' : 'white',
+                                backgroundColor: modeTheme === 'dark' ? '#0f172a' : '#fff',
                                 justifyContent: 'space-between',
                                 borderWidth: modeTheme === 'dark' ? '0px' : '1px',
                                 borderRadius: '25px'
@@ -95,7 +95,7 @@ export default function HideAppBar(props: Props) {
                                         <MenuIcon sx={{
                                             fontSize: {
                                                 xs: '1.5rem', sm: '2rem',
-                                                color: modeTheme === 'dark' ? 'white' : '#404040'
+                                                color: modeTheme === 'dark' ? '#fff' : '#404040'
                                             }
                                         }} />
                                     </IconButton>
@@ -127,7 +127,7 @@ export default function HideAppBar(props: Props) {
                 <Box sx={{
                     width: '100%',
                     padding: '20px',
-                    backgroundColor: modeTheme === 'dark' ? '#020617' : 'white'
+                    backgroundColor: modeTheme === 'dark' ? '#020617' : '#fff'
                 }}>
                     <Typography sx={{
                         fontSize: '1rem',
@@ -141,7 +141,7 @@ export default function HideAppBar(props: Props) {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    backgroundColor: modeTheme === 'dark' ? '#020617' : 'white',
+                    backgroundColor: modeTheme === 'dark' ? '#020617' : '#fff',
                     height: '100%'
                 }}>
                     {isArrMenu.map((text) => (
@@ -152,7 +152,7 @@ export default function HideAppBar(props: Props) {
                                 },
                                 padding: '10px 20px',
                                 margin: '5px 0',
-                                color: modeTheme === 'dark' ? 'white' : 'black',
+                                color: modeTheme === 'dark' ? '#fff' : 'black',
                             }} onClick={() => {
                                 router.push(text?.link);
                                 setTimeout(() => {
@@ -174,7 +174,7 @@ export default function HideAppBar(props: Props) {
                                 },
                                 padding: '10px 20px',
                                 margin: '5px 0',
-                                color: modeTheme === 'dark' ? 'white' : 'black',
+                                color: modeTheme === 'dark' ? '#fff' : 'black',
                             }} onClick={() => {
                                 dispatch(setThemeGlobal(modeTheme === 'dark' ? 'light' : 'dark'));
                             }}>
@@ -184,7 +184,7 @@ export default function HideAppBar(props: Props) {
                             <ListItemText primary={modeTheme === 'dark' ? 'Light Mode' : 'Dark Mode'} />
                         </ListItemButton>
                     </ListItem>
-                    <Divider sx={{ backgroundColor: 'white', margin: '10px 0' }} />
+                    <Divider sx={{ backgroundColor: '#fff', margin: '10px 0' }} />
                 </Box>
             </Drawer>
         </React.Fragment>

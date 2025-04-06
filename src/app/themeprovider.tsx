@@ -15,7 +15,7 @@ export default function ThemeProviders({ children }: { children: React.ReactNode
                 default: checkedMode === 'dark' ? '#020617' : '#fff'
             },
             text: {
-                primary: checkedMode === 'dark' ? 'white' : '#020617'
+                primary: checkedMode === 'dark' ? '#fff' : '#020617'
             }
         },
     })

@@ -13,7 +13,7 @@ export default function MobileOnly() {
                 display: isMobile ? 'flex' : 'none'
             }}>
             <Typography variant="h1" sx={{
-                color: themeMode === 'dark' ? 'white' : 'black'
+                color: themeMode === 'dark' ? '#fff' : 'black'
             }}>This content is only available on mobile devices.</Typography>
         </Box>
     );

@@ -29,19 +29,19 @@ export default function BodyLanding() {
             {clientRendered && (
                 <Box className={`w-full space-y-5 pb-10 ${isMobile ? 'hidden' : 'block'}`}>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-white' : 'text-black'} font-bold`}>Introduction</Typography>
+                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Introduction</Typography>
                         <DynamicIntroduction />
                     </Box>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-white' : 'text-black'} font-bold`}>Tech Stack</Typography>
+                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Tech Stack</Typography>
                         <DynamicTechStack />
                     </Box>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-white' : 'text-black'} font-bold`}>Project Experience</Typography>
+                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Project Experience</Typography>
                         <DynamicProject />
                     </Box>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-white' : 'text-black'} font-bold`}>Github History</Typography>
+                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Github History</Typography>
                         <GithubCalendarComponent />
                     </Box>
                 </Box>

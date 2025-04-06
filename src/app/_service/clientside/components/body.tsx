@@ -19,7 +19,7 @@ export default function BodyPortofolio() {
                     className="h-full w-full z-40 object-cover object-top"
                 />
                 <Box className="w-full inset-0 flex justify-center absolute items-center">
-                    <Box className='w-80 h-80 -z-50 bg-gradient-to-t from-white via-sky-500 to-blue-700 rounded-full' />
+                    <Box className='w-80 h-80 -z-50 bg-gradient-to-t from-[#fff] via-sky-500 to-blue-700 rounded-full' />
                 </Box>
             </Box>
             <Box sx={{ width: '100%', paddingTop: '5px' }}>
