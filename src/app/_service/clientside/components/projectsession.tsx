@@ -28,41 +28,41 @@ export default function ProjectSession() {
             url: 'https://ticket-box-web-app.vercel.app/'
         },
         {
-            src: '/images/sondir.png', projectName: 'Ticket Box Web App',
-            projectDesc: 'Ticket Box Web App',
+            src: '/images/sondir.png', projectName: 'Sondir Boring Jakarta',
+            projectDesc: 'Sondir Boring Jakarta',
             projectDate: new Date('2024-12-15'),
             url: 'https://sondirboring.com/'
         },
     ]
+
     return (
-  <div className="flex flex-col space-y-3">
-    {arrayProjectSession.map((item, index) => (
-      <Link href={item.url} target="_blank" key={index}>
-        <Card sx={{
-          maxWidth: '100vw',
-          width: '100%',
-          bgcolor: theme === 'dark' ? '#0f172a' : '#fff',
-          borderRadius: '15px'
-        }}>
-          <CardActionArea>
-            <Image
-              height={500}
-              width={500}
-              src={item.src}
-              alt="Project Image"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="subtitle1" component="div">
-                {item.projectName}
-              </Typography>
-              <Typography variant="body2" fontSize={'12px'} sx={{ color: 'text.secondary' }}>
-                {item.projectDesc}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Link>
-    ))}
-  </div>
-);
+        <div className="flex flex-col space-y-3">
+            {arrayProjectSession.map((item, index) => (
+                <Link href={item.url} target="_blank" key={index}>
+                    <Card sx={{
+                        maxWidth: '100vw',
+                        width: '100%',
+                        borderRadius: '15px'
+                    }} className={`${theme === 'dark' ? 'bg-slate-950' : 'bg-gray-100'}`}>
+                        <CardActionArea>
+                            <Image
+                                height={500}
+                                width={500}
+                                src={item.src}
+                                alt="Project Image"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="subtitle1" component="div">
+                                    {item.projectName}
+                                </Typography>
+                                <Typography variant="body2" fontSize={'12px'} sx={{ color: 'text.secondary' }}>
+                                    {item.projectDesc}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                </Link>
+            ))}
+        </div>
+    );
 }

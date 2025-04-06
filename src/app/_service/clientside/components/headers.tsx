@@ -54,7 +54,7 @@ export default function HideAppBar(props: Props) {
 
     const modeTheme = useAppSelector((state) => state.global.themeMode.mode)
     const dispatch = useAppDispatch()
-    const router = useRouter(); 
+    const router = useRouter();
     const pathname = usePathname()
 
     const theme = useTheme();
@@ -87,7 +87,11 @@ export default function HideAppBar(props: Props) {
                                             <Image src={'/images/foto-intro.jpeg'} className='object-cover object-[0_40%] w-[40px] h-[40px] rounded-full' width={500} height={500} alt='Profil-logo' />
                                         </button>
                                     </Box>
-                                    <h1>Hello, I am Yusuf!</h1>
+                                    <Typography variant='caption'
+                                        fontSize={'12px'} fontWeight={600}
+                                        sx={{
+                                            color: modeTheme === 'dark' ? '#fff' : '#404040'
+                                        }}>Hello, I am Yusuf!</Typography>
                                 </Box>
 
                                 {isMobile && (

@@ -29,19 +29,27 @@ export default function BodyLanding() {
             {clientRendered && (
                 <Box className={`w-full space-y-5 pb-10 ${isMobile ? 'hidden' : 'block'}`}>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Introduction</Typography>
+                        <Typography variant="body2" fontSize={'16px'}
+                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Introduction</Typography>
                         <DynamicIntroduction />
                     </Box>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Tech Stack</Typography>
+                        <Typography variant="body2" fontSize={'16px'}
+                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Tech Stack</Typography>
                         <DynamicTechStack />
                     </Box>
+                    {/* <Box className='space-y-3'>
+                        <Typography variant="body2" fontSize={'16px'}
+                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Work Experience</Typography>
+                    </Box> */}
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Project Experience</Typography>
+                        <Typography variant="body2" fontSize={'16px'}
+                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Project Experience</Typography>
                         <DynamicProject />
                     </Box>
                     <Box className='space-y-3'>
-                        <Typography className={`text-xl ${themeMode === 'dark' ? 'text-[#fff]' : 'text-black'} font-bold`}>Github History</Typography>
+                        <Typography variant="body2" fontSize={'16px'}
+                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Github History</Typography>
                         <GithubCalendarComponent />
                     </Box>
                 </Box>

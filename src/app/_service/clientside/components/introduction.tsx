@@ -33,7 +33,12 @@ export default function Introduction() {
                         exit={{ y: "-120%" }} staggerDuration={0.025} splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
                         transition={{ type: "spring", damping: 30, stiffness: 400 }} rotationInterval={2000} />
                 </Box> */}
-                <Typography className="text-[#fff] text-justify"> Passionate web developer with experience in HTML, CSS, JavaScript, and TypeScript. Skilled in building responsive web applications using frameworks like ReactJS and NextJS. Continuously improving through personal projects and staying up-to-date with the latest web development trends.</Typography>
+                <Typography variant='caption'
+                    fontSize={'12px'} fontWeight={600}
+                    sx={{
+                        color: themeMode === 'dark' ? '#fff' : '#404040'
+                    }}
+                    className="text-justify"> Passionate web developer with experience in HTML, CSS, JavaScript, and TypeScript. Skilled in building responsive web applications using frameworks like ReactJS and NextJS. Continuously improving through personal projects and staying up-to-date with the latest web development trends.</Typography>
             </Box>
         </>
     );
