@@ -14,7 +14,7 @@ export default function BodyContact() {
     const handleSubmitForm = (e: React.FormEvent) => {
         e.preventDefault()
 
-        const messageUrl = `https://wa.me/089513297524?text=${encodeURIComponent(
+        const messageUrl = `https://wa.me/6289513297524?text=${encodeURIComponent(
             `Halo, nama saya ${nameInput}. ${message}`
         )}`
 
