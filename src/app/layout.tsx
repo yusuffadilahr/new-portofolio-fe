@@ -3,7 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import HideAppBar from "./_service/clientside/components/headers";
 import RootProvider from "./rootprovider";
-import HideNavbarLayout from "./hideNavbarLayout";
+import HideNavbarLayout from "./layouthidenavbar";
 import Footer from "./_service/clientside/components/footer";
 
 const dmSans = DM_Sans({

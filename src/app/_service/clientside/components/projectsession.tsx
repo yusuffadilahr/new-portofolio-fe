@@ -1,15 +1,17 @@
 'use client'
 
-// import { Box } from "@mui/material";
 import { useAppSelector } from "../redux";
 import * as React from "react";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
 import Image from "next/image";
 import Link from "next/link";
+import { Card } from "@/components/ui/card"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+} from "@/components/ui/carousel"
+import { Alert } from "@mui/material";
+import Autoplay from "embla-carousel-autoplay"
 
 export default function ProjectSession() {
     const theme = useAppSelector((state) => state.global.themeMode.mode)
@@ -35,35 +37,37 @@ export default function ProjectSession() {
         },
     ]
 
+    const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+
     return (
-        <div className="flex flex-col space-y-3">
-            {arrayProjectSession.map((item, index) => (
-                <Link href={item.url} target="_blank" key={index}>
-                    <Card sx={{
-                        maxWidth: '100vw',
-                        width: '100%',
-                        borderRadius: '15px',
-                        backgroundColor: theme === 'dark' ? '#0f172a' : '#fff'
-                    }}>
-                        <CardActionArea>
-                            <Image
-                                height={500}
-                                width={500}
-                                src={item.src}
-                                alt="Project Image"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="subtitle1" component="div">
-                                    {item.projectName}
-                                </Typography>
-                                <Typography variant="body2" fontSize={'12px'} sx={{ color: 'text.secondary' }}>
-                                    {item.projectDesc}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Link>
-            ))}
-        </div>
+        <React.Fragment>
+            <Carousel className="w-full max-w-[100vw]"
+                plugins={[plugin.current]}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}>
+                <CarouselContent>
+                    {arrayProjectSession.map((item, index) => (
+                        <CarouselItem key={index}>
+                            <Link href={item.url} target="_blank">
+                                <Card className="w-full max-w-[100vw] h-fit">
+                                    <div className="relative">
+                                        <Image width={500} height={500} className="w-full h-[200px] object-cover rounded-xl"
+                                            alt="Project Image" src={item.src} />
+                                        {/* <div className="absolute inset-0 flex justify-center items-end py-5">
+                                            <div className="bg-red-200 px-4 rounded-xl">
+                                                <Typography variant="body2">{item.projectName}</Typography>
+                                            </div>
+                                        </div> */}
+                                    </div>
+                                </Card>
+                            </Link>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
+            <Alert severity="info" sx={{ bgcolor: theme === 'dark' ? '#00B8D914' : '' }}>
+                Slide image to see more
+            </Alert>
+        </React.Fragment>
     );
 }
