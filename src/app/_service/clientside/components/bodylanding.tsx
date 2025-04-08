@@ -1,10 +1,11 @@
 'use client'
 
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useAppSelector } from "../redux";
+import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
 import * as React from 'react'
 import LoadingComponent from "./loading";
+import { useAppTheme } from "../../hooks/useapptheme";
+import { useInView } from 'react-intersection-observer'
 
 const GithubCalendarComponent = dynamic(() => import('./githubcalendar'), {
     loading: () => <></>
@@ -19,12 +20,21 @@ const DynamicProject = dynamic(() => import('./projectsession'), {
     loading: () => <></>
 })
 
+const DynamicTitleLayout = dynamic(() => import('./titlelayout'), {
+    loading: () => <></>
+})
+
+const DynamicBodyContact = dynamic(() => import('@/app/contact/_components/bodycontact'), {
+    loading: () => <></>
+})
+
 export default function BodyLanding() {
     const [clientRendered, setClientRendered] = React.useState(false);
-
-    const themeMode = useAppSelector((state) => state.global.themeMode.mode)
-    const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.up('sm'))
+    const { isMobile } = useAppTheme()
+    const { ref: refGit, inView: refGitInView } = useInView({
+        threshold: 0.1,
+        triggerOnce: true
+    })
 
     React.useEffect(() => {
         setClientRendered(true)
@@ -36,30 +46,25 @@ export default function BodyLanding() {
         <>
             {clientRendered && (
                 <Box className={`w-full space-y-5 pb-10 ${isMobile ? 'hidden' : 'block'}`}>
-                    <Box className='space-y-3'>
-                        <Typography variant="body2" fontSize={'16px'}
-                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Introduction</Typography>
+                    <DynamicTitleLayout title='Introduction'>
                         <DynamicIntroduction />
-                    </Box>
-                    <Box className='space-y-3'>
-                        <Typography variant="body2" fontSize={'16px'}
-                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Tech Stack</Typography>
+                    </DynamicTitleLayout>
+
+                    <DynamicTitleLayout title='Tech Stack'>
                         <DynamicTechStack />
-                    </Box>
-                    {/* <Box className='space-y-3'>
-                        <Typography variant="body2" fontSize={'16px'}
-                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Work Experience</Typography>
-                    </Box> */}
-                    <Box className='space-y-3'>
-                        <Typography variant="body2" fontSize={'16px'}
-                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Project Experience</Typography>
+                    </DynamicTitleLayout>
+
+                    <DynamicTitleLayout title='Project Experience'>
                         <DynamicProject />
-                    </Box>
-                    <Box className='space-y-3'>
-                        <Typography variant="body2" fontSize={'16px'}
-                            fontWeight={600} sx={{ color: themeMode === 'dark' ? '#fff' : '#000' }}>Github History</Typography>
+                    </DynamicTitleLayout>
+
+                    <DynamicTitleLayout title='Github History' ref={refGit} inView={refGitInView}>
                         <GithubCalendarComponent />
-                    </Box>
+                    </DynamicTitleLayout>
+                  
+                    <DynamicTitleLayout title='Contact' ref={refGit} inView={refGitInView}>
+                        <DynamicBodyContact pb={0} pt={0}/>
+                    </DynamicTitleLayout>
                 </Box>
             )}
         </>

@@ -5,7 +5,13 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import * as React from 'react'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-export default function BodyContact() {
+export default function BodyContact({
+    pt = 2,
+    pb = 1
+}: {
+    pt?: number
+    pb?: number
+}) {
     const [nameInput, setNameInput] = React.useState<string>('')
     const [message, setMessage] = React.useState<string>('')
 
@@ -24,8 +30,8 @@ export default function BodyContact() {
     return (
         <div>
             <Box sx={{
-                pt: 2,
-                pb: 1
+                pt: pt,
+                pb: pb
             }}>
                 <Typography variant="subtitle2" fontSize={'20px'}
                     sx={{
