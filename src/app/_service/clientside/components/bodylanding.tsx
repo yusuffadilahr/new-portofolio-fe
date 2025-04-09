@@ -49,7 +49,7 @@ export default function BodyLanding() {
                         <DynamicTechStack />
                     </DynamicTitleLayout>
 
-                    <DynamicTitleLayout title='Project Experience'>
+                    <DynamicTitleLayout title='Latest Project'>
                         <DynamicProject />
                     </DynamicTitleLayout>
 
