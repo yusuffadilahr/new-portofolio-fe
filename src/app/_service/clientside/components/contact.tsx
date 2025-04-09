@@ -43,7 +43,7 @@ export default function BodyContact() {
                             '& .MuiOutlinedInput-root': {
                                 borderRadius: '10px',
                                 '&:hover fieldset': {
-                                    borderColor: '#fff',
+                                    borderColor: themeMode === 'dark' ? '#fff' : '',
                                 },
                                 '&.Mui-focused fieldset': {
                                     borderColor: '#475569',
@@ -63,7 +63,7 @@ export default function BodyContact() {
                             '& .MuiOutlinedInput-root': {
                                 borderRadius: '10px',
                                 '&:hover fieldset': {
-                                    borderColor: '#fff',
+                                    borderColor: themeMode === 'dark' ? '#fff' : '',
                                 },
                                 '&.Mui-focused fieldset': {
                                     borderColor: '#475569',

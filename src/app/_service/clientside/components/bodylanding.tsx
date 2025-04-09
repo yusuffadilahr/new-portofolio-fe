@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import * as React from 'react'
 import LoadingComponent from "./loading";
 import { useAppTheme } from "../../hooks/useapptheme";
-import { useInView } from 'react-intersection-observer'
 
 const GithubCalendarComponent = dynamic(() => import('./githubcalendar'), {
     loading: () => <></>
@@ -31,9 +30,6 @@ const DynamicBodyContact = dynamic(() => import('./contact'), {
 export default function BodyLanding() {
     const [clientRendered, setClientRendered] = React.useState(false);
     const { isMobile } = useAppTheme()
-    const { ref: refGit, inView: refGitInView } = useInView({
-        triggerOnce: true
-    })
 
     React.useEffect(() => {
         setClientRendered(true)
@@ -57,7 +53,7 @@ export default function BodyLanding() {
                         <DynamicProject />
                     </DynamicTitleLayout>
 
-                    <DynamicTitleLayout title='Github History' ref={refGit} inView={refGitInView}>
+                    <DynamicTitleLayout title='Github History'>
                         <GithubCalendarComponent />
                     </DynamicTitleLayout>
                   
