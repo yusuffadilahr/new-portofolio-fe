@@ -40,7 +40,7 @@ export default function BodyLanding() {
     return (
         <>
             {clientRendered && (
-                <Box className={`w-full space-y-5 pb-10 ${isMobile ? 'hidden' : 'block'}`}>
+                <Box className={`w-full space-y-5 pb-10 ${isMobile ? 'hidden' : 'block'} px-3`}>
                     <DynamicTitleLayout title='Introduction'>
                         <DynamicIntroduction />
                     </DynamicTitleLayout>
