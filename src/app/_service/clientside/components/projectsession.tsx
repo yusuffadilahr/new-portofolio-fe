@@ -11,7 +11,7 @@ import {
     CarouselItem,
 } from "@/components/ui/carousel"
 import { Alert } from "@mui/material";
-import Autoplay from "embla-carousel-autoplay"
+// import Autoplay from "embla-carousel-autoplay"
 
 export default function ProjectSession() {
     const theme = useAppSelector((state) => state.global.themeMode.mode)
@@ -37,14 +37,11 @@ export default function ProjectSession() {
         },
     ]
 
-    const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+    // const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
 
     return (
         <React.Fragment>
-            <Carousel className="w-full max-w-[100vw]"
-                plugins={[plugin.current]}
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}>
+            <Carousel className="w-full max-w-[100vw]">
                 <CarouselContent>
                     {arrayProjectSession.map((item, index) => (
                         <CarouselItem key={index}>
@@ -65,7 +62,15 @@ export default function ProjectSession() {
                     ))}
                 </CarouselContent>
             </Carousel>
-            <Alert severity="info" sx={{ bgcolor: theme === 'dark' ? '#00B8D914' : '' }}>
+            <Alert severity="info" sx={{
+                bgcolor: theme === 'dark' ? '#00B8D914' : '',
+                borderRadius: '10px',
+                py: 0,
+                fontSize: '12px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
                 Slide image to see more
             </Alert>
         </React.Fragment>

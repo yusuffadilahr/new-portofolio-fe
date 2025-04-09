@@ -45,12 +45,9 @@ export default function BodyLanding() {
                         <DynamicIntroduction />
                     </DynamicTitleLayout>
 
-                    <DynamicTitleLayout title='Tech Stack'>
-                        <DynamicTechStack />
-                    </DynamicTitleLayout>
-
                     <DynamicTitleLayout title='Latest Project'>
                         <DynamicProject />
+                        <DynamicTechStack />
                     </DynamicTitleLayout>
 
                     <DynamicTitleLayout title='Github History'>
