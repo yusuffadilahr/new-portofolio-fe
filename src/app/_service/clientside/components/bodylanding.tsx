@@ -24,7 +24,7 @@ const DynamicTitleLayout = dynamic(() => import('./titlelayout'), {
     loading: () => <></>
 })
 
-const DynamicBodyContact = dynamic(() => import('@/app/contact/_components/bodycontact'), {
+const DynamicBodyContact = dynamic(() => import('./contact'), {
     loading: () => <></>
 })
 
@@ -32,7 +32,6 @@ export default function BodyLanding() {
     const [clientRendered, setClientRendered] = React.useState(false);
     const { isMobile } = useAppTheme()
     const { ref: refGit, inView: refGitInView } = useInView({
-        threshold: 0.1,
         triggerOnce: true
     })
 
@@ -62,8 +61,8 @@ export default function BodyLanding() {
                         <GithubCalendarComponent />
                     </DynamicTitleLayout>
                   
-                    <DynamicTitleLayout title='Contact' ref={refGit} inView={refGitInView}>
-                        <DynamicBodyContact pb={0} pt={0}/>
+                    <DynamicTitleLayout title='Contact'>
+                        <DynamicBodyContact />
                     </DynamicTitleLayout>
                 </Box>
             )}
