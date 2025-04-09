@@ -11,8 +11,14 @@ export default function Loadinghoc({ children }: { children: React.ReactNode }) 
     }, [])
 
     if (isLoading) return (
-        <div className="w-full h-screen flex justify-center items-center bg-black">
-            <img src="https://cdn.dribbble.com/users/227277/screenshots/5414281/loader-black.gif" alt="loading" />
+        <div className="flex justify-center items-center h-screen">
+            <div
+                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+                role="status">
+                <span
+                    className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >Loading...</span>
+            </div>
         </div>
     )
 
