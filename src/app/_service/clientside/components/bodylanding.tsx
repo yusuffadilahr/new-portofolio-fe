@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import * as React from 'react'
 import LoadingComponent from "./loading";
 import { useAppTheme } from "../../hooks/useapptheme";
+import TimelineEducation from "./timeline";
 
 const GithubCalendarComponent = dynamic(() => import('./githubcalendar'), {
     loading: () => <></>
@@ -50,10 +51,14 @@ export default function BodyLanding() {
                         <DynamicTechStack />
                     </DynamicTitleLayout>
 
+                    <DynamicTitleLayout title='Education'>
+                        <TimelineEducation />
+                    </DynamicTitleLayout>
+
                     <DynamicTitleLayout title='Github History'>
                         <GithubCalendarComponent />
                     </DynamicTitleLayout>
-                  
+
                     <DynamicTitleLayout title='Contact'>
                         <DynamicBodyContact />
                     </DynamicTitleLayout>
