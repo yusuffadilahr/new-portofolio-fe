@@ -25,8 +25,7 @@ export default function TimelineEducation() {
                             sx={{ m: 'auto 0' }}
                             align="right"
                             variant="body2"
-                            color="text.secondary"
-                        >
+                            color="text.secondary">
                             {new Date(item?.year).getFullYear()}
                         </TimelineOppositeContent>
                         <TimelineSeparator>

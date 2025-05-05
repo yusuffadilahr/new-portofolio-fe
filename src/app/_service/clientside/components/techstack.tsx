@@ -17,43 +17,8 @@ import Marquee from "react-fast-marquee";
 export default function TechStackComponent() {
     const themeMode = useAppSelector((state) => state.global.themeMode.mode)
     return (
-        // <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-[#fff]' : 'bg-[#fff] border text-black'} 
-        // rounded-2xl p-3 sm:p-4 md:p-5 min-h-[2.5rem] h-fit flex justify-center items-center font-bold`}>
-        //     <Box className="grid grid-cols-5 w-full gap-4 text-center">
-        //         {/* <Box>
-        //             <TypeScriptIcons className={'text-sm'} />
-        //         </Box>
-        //         <Box>
-        //             <JavaScriptIcons />
-        //         </Box>
-        //         <Box>
-        //             <NodejsIcons />
-        //         </Box>
-        //         <Box>
-        //             <ReactIcons className={'text-xs'} />
-        //         </Box>
-        //         <Box>
-        //             <NextJsIcons />
-        //         </Box>
-        //         <Box>
-        //             <ExpressJsIcons />
-        //         </Box>
-        //         <Box>
-        //             <PrismaIcons />
-        //         </Box>
-        //         <Box>
-        //             <MySqlIcons />
-        //         </Box>
-        //         <Box>
-        //             <SupabaseIcons />
-        //         </Box>
-        //         <Box>
-        //             <ReduxIcons />
-        //         </Box> */}
-        //     </Box>
-        // </Box>
         <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-[#fff]' : 'bg-[#fff] border text-black'} 
-        // rounded-2xl p-3 sm:p-4 md:p-5 min-h-[2.5rem] h-fit flex justify-center items-center font-bold`}>
+        rounded-2xl p-3 sm:p-4 md:p-5 min-h-[2.5rem] h-fit flex justify-center items-center font-bold`}>
             <Marquee speed={60} gradient={false} direction="left" >
                 <div className="flex items-center gap-3 px-2">
                     <TypeScriptIcons className="w-10 h-10" />

@@ -71,7 +71,7 @@ export default function ProjectSession() {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                Slide image to see more
+                Swipe left or right to explore more projects
             </Alert>
         </React.Fragment>
     );
