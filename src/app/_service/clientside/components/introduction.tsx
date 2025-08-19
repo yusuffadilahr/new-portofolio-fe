@@ -2,15 +2,10 @@
 
 import { Box, Typography } from "@mui/material";
 import { useAppSelector } from "../redux";
-// import dynamic from "next/dynamic";
 import * as React from 'react'
-
-// const RotatingText = dynamic(() => import('./reactbits/rotatingtext'))
-// const VariableProximity = dynamic(() => import('./reactbits/varpromixity'))
 
 export default function Introduction() {
     const themeMode = useAppSelector((state) => state.global.themeMode.mode);
-    // const containerRef = React.useRef(null);
     return (
         <>
             {/* <Box className={`w-full ${themeMode === 'dark' ? 'bg-slate-900 text-[#fff]' : 'bg-[#fff] border'} 
